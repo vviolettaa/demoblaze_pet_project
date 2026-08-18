@@ -11,4 +11,6 @@
 | **Шаги воспроизведения** | 1. Открыть Demoblaze (https://www.demoblaze.com/)<br>2. Добавить любой товар в корзину<br>3. Перейти в корзину и нажать "Place Order"<br>4. Заполнить все поля, кроме "Country" (оставить пустым)<br>5. Нажать "Purchase" |
 | **Фактический результат** | Заказ успешно оформляется, появляется сообщение "Thank you for your purchase!" |
 | **Ожидаемый результат** | Система должна выдать сообщение об ошибке с требованием заполнить поле Country перед оформлением заказа |
-| **Скриншот** | |
+| **Скриншот** |<img width="600" height="269" alt="bug-004-1" src="https://github.com/user-attachments/assets/78d561d9-7f91-4b47-b0dd-257eafa2b753" />
+                <img width="619" height="268" alt="bug-004-2" src="https://github.com/user-attachments/assets/30a03553-e2de-439e-87a0-26d5ca0bdec7" />  |
+
