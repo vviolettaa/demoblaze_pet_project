@@ -11,4 +11,5 @@
 | **Шаги воспроизведения** | 1. Открыть Demoblaze (https://www.demoblaze.com/)<br>2. Добавить любой товар в корзину<br>3. Перейти в корзину и нажать "Place Order"<br>4. Заполнить все поля, кроме "City" (оставить пустым)<br>5. Нажать "Purchase" |
 | **Фактический результат** | Заказ успешно оформляется, появляется сообщение "Thank you for your purchase!" |
 | **Ожидаемый результат** | Система должна выдать сообщение об ошибке с требованием заполнить поле City перед оформлением заказа |
-| **Скриншот** | |
+| **Скриншот** |<img width="619" height="267" alt="bug-005-1" src="https://github.com/user-attachments/assets/84964493-71ac-4a1e-98b7-2f1760b9727b" /> |
+|              |<img width="619" height="279" alt="bug-005-2" src="https://github.com/user-attachments/assets/3a653628-d088-4946-bb32-1c66ee3cfdb7" /> |
