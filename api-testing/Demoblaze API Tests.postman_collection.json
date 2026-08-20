@@ -1,0 +1,619 @@
+{
+  "info": {
+    "_postman_id": "ced3a11f-578f-4d7e-aeb8-4ac709caa5f9",
+    "name": "Demoblaze API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57593678",
+    "_collection_link": "https://go.postman.co/collection/57593678-ced3a11f-578f-4d7e-aeb8-4ac709caa5f9?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Positive Tests",
+      "item": [
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// Проверка статуса\r",
+                  "pm.test(\"Status is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "// Проверка, что в ответе есть токен\r",
+                  "pm.test(\"Response contains Auth_token\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.include(\"Auth_token\");\r",
+                  "});\r",
+                  "\r",
+                  "// Проверка, что тело ответа не пустое\r",
+                  "pm.test(\"Response body is not empty\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.be.empty;\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "*/*"
+              },
+              {
+                "key": "accept-language",
+                "value": "ru,en;q=0.9"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "origin",
+                "value": "https://www.demoblaze.com"
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i"
+              },
+              {
+                "key": "referer",
+                "value": "https://www.demoblaze.com/"
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Chromium\";v=\"148\", \"YaBrowser\";v=\"26.6\", \"Not/A)Brand\";v=\"99\", \"Yowser\";v=\"2.5\""
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0"
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"Windows\""
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty"
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors"
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-site"
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 YaBrowser/26.6.0.0 Safari/537.36"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"username\":\"{{username}}\",\"password\":\"{{password}}\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "login"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://api.demoblaze.com/login' \\\r\n  -H 'accept: */*' \\\r\n  -H 'accept-language: ru,en;q=0.9' \\\r\n  -H 'content-type: application/json' \\\r\n  -H 'origin: https://www.demoblaze.com' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://www.demoblaze.com/' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"148\", \"YaBrowser\";v=\"26.6\", \"Not/A)Brand\";v=\"99\", \"Yowser\";v=\"2.5\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-site' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 YaBrowser/26.6.0.0 Safari/537.36' \\\r\n  --data-raw '{\"username\":\"viachhtest\",\"password\":\"VGVzdDEyMzQ=\"}'"
+          },
+          "response": []
+        },
+        {
+          "name": "Add To Cart",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "*/*"
+              },
+              {
+                "key": "accept-language",
+                "value": "ru,en;q=0.9"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "origin",
+                "value": "https://www.demoblaze.com"
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i"
+              },
+              {
+                "key": "referer",
+                "value": "https://www.demoblaze.com/"
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Chromium\";v=\"148\", \"YaBrowser\";v=\"26.6\", \"Not/A)Brand\";v=\"99\", \"Yowser\";v=\"2.5\""
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0"
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"Windows\""
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty"
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors"
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-site"
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 YaBrowser/26.6.0.0 Safari/537.36"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"id\":\"8acec9c1-492c-953d-e4d0-23b3de237d53\",\"cookie\":\"dmlhY2hodGVzdDE3ODc4MzY=\",\"prod_id\":1,\"flag\":true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.demoblaze.com/addtocart",
+              "protocol": "https",
+              "host": [
+                "api",
+                "demoblaze",
+                "com"
+              ],
+              "path": [
+                "addtocart"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://api.demoblaze.com/addtocart' \\\r\n  -H 'accept: */*' \\\r\n  -H 'accept-language: ru,en;q=0.9' \\\r\n  -H 'content-type: application/json' \\\r\n  -H 'origin: https://www.demoblaze.com' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://www.demoblaze.com/' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"148\", \"YaBrowser\";v=\"26.6\", \"Not/A)Brand\";v=\"99\", \"Yowser\";v=\"2.5\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-site' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 YaBrowser/26.6.0.0 Safari/537.36' \\\r\n  --data-raw '{\"id\":\"8acec9c1-492c-953d-e4d0-23b3de237d53\",\"cookie\":\"dmlhY2hodGVzdDE3ODc4MzY=\",\"prod_id\":1,\"flag\":true}'"
+          },
+          "response": []
+        },
+        {
+          "name": "View Cart",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// Проверяем, что у ответа есть поле Items (массив)\r",
+                  "pm.test(\"Response has Items array\", function () {\r",
+                  "    var response = pm.response.json();\r",
+                  "    pm.expect(response).to.have.property('Items');\r",
+                  "    pm.expect(response.Items).to.be.an('array');\r",
+                  "});\r",
+                  "\r",
+                  "// Проверяем, есть ли товары в корзине\r",
+                  "pm.test(\"Cart contains at least one item\", function () {\r",
+                  "    var response = pm.response.json();\r",
+                  "    pm.expect(response.Items.length).to.be.above(0);\r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  "// Логируем количество товаров\r",
+                  "var response = pm.response.json();\r",
+                  "console.log(\"Товаров в корзине: \" + response.Items.length);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "*/*"
+              },
+              {
+                "key": "accept-language",
+                "value": "ru,en;q=0.9"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "origin",
+                "value": "https://www.demoblaze.com"
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i"
+              },
+              {
+                "key": "referer",
+                "value": "https://www.demoblaze.com/"
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Chromium\";v=\"148\", \"YaBrowser\";v=\"26.6\", \"Not/A)Brand\";v=\"99\", \"Yowser\";v=\"2.5\""
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0"
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"Windows\""
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty"
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors"
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-site"
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 YaBrowser/26.6.0.0 Safari/537.36"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"cookie\":\"dmlhY2hodGVzdDE3ODc4MzY=\",\"flag\":true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.demoblaze.com/viewcart",
+              "protocol": "https",
+              "host": [
+                "api",
+                "demoblaze",
+                "com"
+              ],
+              "path": [
+                "viewcart"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://api.demoblaze.com/viewcart' \\\r\n  -H 'accept: */*' \\\r\n  -H 'accept-language: ru,en;q=0.9' \\\r\n  -H 'content-type: application/json' \\\r\n  -H 'origin: https://www.demoblaze.com' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://www.demoblaze.com/' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"148\", \"YaBrowser\";v=\"26.6\", \"Not/A)Brand\";v=\"99\", \"Yowser\";v=\"2.5\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-site' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 YaBrowser/26.6.0.0 Safari/537.36' \\\r\n  --data-raw '{\"cookie\":\"dmlhY2hodGVzdDE3ODc4MzY=\",\"flag\":true}'"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Cart",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "*/*"
+              },
+              {
+                "key": "accept-language",
+                "value": "ru,en;q=0.9"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "origin",
+                "value": "https://www.demoblaze.com"
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i"
+              },
+              {
+                "key": "referer",
+                "value": "https://www.demoblaze.com/"
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Chromium\";v=\"148\", \"YaBrowser\";v=\"26.6\", \"Not/A)Brand\";v=\"99\", \"Yowser\";v=\"2.5\""
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0"
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"Windows\""
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty"
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors"
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-site"
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 YaBrowser/26.6.0.0 Safari/537.36"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"cookie\":\"viachhtest\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.demoblaze.com/deletecart",
+              "protocol": "https",
+              "host": [
+                "api",
+                "demoblaze",
+                "com"
+              ],
+              "path": [
+                "deletecart"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://api.demoblaze.com/deletecart' \\\r\n  -H 'accept: */*' \\\r\n  -H 'accept-language: ru,en;q=0.9' \\\r\n  -H 'content-type: application/json' \\\r\n  -H 'origin: https://www.demoblaze.com' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://www.demoblaze.com/' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"148\", \"YaBrowser\";v=\"26.6\", \"Not/A)Brand\";v=\"99\", \"Yowser\";v=\"2.5\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-site' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 YaBrowser/26.6.0.0 Safari/537.36' \\\r\n  --data-raw '{\"cookie\":\"viachhtest\"}'"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Negative Tests",
+      "item": [
+        {
+          "name": "Wrong Password",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// Проверяем, что в ответе есть сообщение об ошибке\r",
+                  "pm.test(\"Response contains 'Wrong password'\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.include(\"Wrong password\");\r",
+                  "});\r",
+                  "\r",
+                  "// Проверяем, что в ответе нет токена \r",
+                  "pm.test(\"Response does not contain Auth_token\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Auth_token\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "*/*"
+              },
+              {
+                "key": "accept-language",
+                "value": "ru,en;q=0.9"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "origin",
+                "value": "https://www.demoblaze.com"
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i"
+              },
+              {
+                "key": "referer",
+                "value": "https://www.demoblaze.com/"
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Chromium\";v=\"148\", \"YaBrowser\";v=\"26.6\", \"Not/A)Brand\";v=\"99\", \"Yowser\";v=\"2.5\""
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0"
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"Windows\""
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty"
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors"
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-site"
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 YaBrowser/26.6.0.0 Safari/537.36"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"username\":\"{{username}}\",\"password\":\"failed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "login"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://api.demoblaze.com/login' \\\r\n  -H 'accept: */*' \\\r\n  -H 'accept-language: ru,en;q=0.9' \\\r\n  -H 'content-type: application/json' \\\r\n  -H 'origin: https://www.demoblaze.com' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://www.demoblaze.com/' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"148\", \"YaBrowser\";v=\"26.6\", \"Not/A)Brand\";v=\"99\", \"Yowser\";v=\"2.5\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-site' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 YaBrowser/26.6.0.0 Safari/537.36' \\\r\n  --data-raw '{\"username\":\"viachhtest\",\"password\":\"VGVzdDEyMzQ=\"}'"
+          },
+          "response": []
+        },
+        {
+          "name": "Failed Sign Up",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// Проверяем, что при повторной регистрации приходит ошибка\r",
+                  "pm.test(\"Response contains error message\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.include(\"This user already exist.\");\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "*/*"
+              },
+              {
+                "key": "accept-language",
+                "value": "ru,en;q=0.9"
+              },
+              {
+                "key": "content-type",
+                "value": "application/json"
+              },
+              {
+                "key": "origin",
+                "value": "https://www.demoblaze.com"
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i"
+              },
+              {
+                "key": "referer",
+                "value": "https://www.demoblaze.com/"
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Chromium\";v=\"148\", \"YaBrowser\";v=\"26.6\", \"Not/A)Brand\";v=\"99\", \"Yowser\";v=\"2.5\""
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0"
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"Windows\""
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty"
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors"
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-site"
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 YaBrowser/26.6.0.0 Safari/537.36"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"username\":\"violettamansurovatest123\",\"password\":\"bGxsbHFxcXE5Mzc4NQ==\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.demoblaze.com/signup",
+              "protocol": "https",
+              "host": [
+                "api",
+                "demoblaze",
+                "com"
+              ],
+              "path": [
+                "signup"
+              ]
+            },
+            "description": "Generated from cURL: curl 'https://api.demoblaze.com/signup' \\\r\n  -H 'accept: */*' \\\r\n  -H 'accept-language: ru,en;q=0.9' \\\r\n  -H 'content-type: application/json' \\\r\n  -H 'origin: https://www.demoblaze.com' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://www.demoblaze.com/' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"148\", \"YaBrowser\";v=\"26.6\", \"Not/A)Brand\";v=\"99\", \"Yowser\";v=\"2.5\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-site' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 YaBrowser/26.6.0.0 Safari/537.36' \\\r\n  --data-raw '{\"username\":\"violettamansurovatest123\",\"password\":\"bGxsbHFxcXE5Mzc4NQ==\"}'"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
